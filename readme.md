@@ -1,5 +1,6 @@
 # Segment-Anything-Easy WebUI 
-本项目Fork自[SAM-webui](https://github.com/varhuman/SAM-webui)
+**本项目Fork自[SAM-webui](https://github.com/varhuman/SAM-webui)**
+
 欢迎来到我为 [segment-anything](https://github.com/facebookresearch/segment-anything) 所做的一个简易可本地搭建的webui demo。
 
 ## 🚀 安装与设置
@@ -24,13 +25,13 @@
 
 ## 🎨 使用方法
 运行程序后，在cmd的输出框里你可以找到一个* Running on http://127.0.0.1:xxxx (xxxx为端口号)*这样的地址，在浏览器打开即可
-
+![UI](https://github.com/No-22-Github/SAM-webui-Easy/blob/main/tests/UI.png)
 
 - 左侧是默认图片，一只可爱的可琳 by stable diffusion。
 - 你可以通过选择文件按钮导入自己的图片。
 - 通过点击左侧图片上的点来选择我们需要裁剪出来的 mask，可以多点，识别率更高。
 
-
+![use](https://github.com/No-22-Github/SAM-webui-Easy/blob/main/tests/useit.png)
     > 🔴 红点表示你选择的点。点击 "Clear Points" 可以清除所有点。
 
 - 选择好你想要的点后，点击 "Process Points"。稍等片刻，即可生成你的 mask。生成速度取决于你的gpu（mac使用cpu会比较慢，目前的mps模式会报错，还未解决）
