@@ -6,12 +6,12 @@
 
 1. **创建本地虚拟环境并安装所需库：**
 
-本项目只支持Windows：
+**本项目只支持Windows：**
 
       - 1.对于N卡用户，请确认CUDA已安装，然后双击setup.bat文件进行安装。
-      - 2.对于A卡用户，请确认直接双击AMD-setup.bat进行安装。
+      - 2.对于A卡用户，请确认直接双击AMD-setup.bat进行安装。（AMD显卡使用DML来加速运算，可能会有bug）
 
-1. **下载必要的模型文件（至少选择一个）：**
+1. **下载必要的模型文件：**
 
     - [sam_vit_h_4b8939.pth](https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth)
 
@@ -48,7 +48,7 @@
 
 ## 📓 TODO
 
-- [ ] 支持AMD
+- [ ] 全面支持AMD
 - [ ] 增加黑白底切换
 - [ ] 添加更多模型
 
