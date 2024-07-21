@@ -24,8 +24,6 @@ if errorlevel 1 (
 
 echo All dependencies are present. Nice work!
 
-@echo on
-
 rem Create a virtual environment and install requirements
 echo Creating virtual environment
 python -m venv venv
@@ -35,7 +33,8 @@ echo Activating virtual environment
 call venv\Scripts\activate.bat
 
 echo Installing requirements
-
+pip install git+https://github.com/facebookresearch/segment-anything.git
+pip install torch==2.0.0+cu118 torchvision==0.15.1+cu118 --extra-index-url https://download.pytorch.org/whl/cu118
 pip install -r requirements.txt
 
 echo Installing Node.js dependencies

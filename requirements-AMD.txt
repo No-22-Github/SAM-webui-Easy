@@ -6,4 +6,4 @@ onnx
 gradio
 flask
 werkzeug
-torch-directml --extra-index-url https://pypi.tuna.tsinghua.edu.cn/simple
+torch-directml -i https://pypi.tuna.tsinghua.edu.cn/simple

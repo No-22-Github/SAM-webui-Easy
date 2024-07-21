@@ -24,8 +24,6 @@ if errorlevel 1 (
 
 echo All dependencies are present. Nice work!
 
-@echo on
-
 rem Create a virtual environment and install requirements
 echo Creating virtual environment
 python -m venv venv
@@ -35,7 +33,7 @@ echo Activating virtual environment
 call venv\Scripts\activate.bat
 
 echo Installing requirements
-
+pip install git+https://github.com/facebookresearch/segment-anything.git
 pip install -r requirements-AMD.txt
 
 echo Installing Node.js dependencies
