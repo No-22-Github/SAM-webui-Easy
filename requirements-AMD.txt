@@ -1,0 +1,9 @@
+opencv-python 
+pycocotools 
+matplotlib 
+onnxruntime
+onnx
+gradio
+flask
+werkzeug
+torch-directml --extra-index-url https://pypi.tuna.tsinghua.edu.cn/simple

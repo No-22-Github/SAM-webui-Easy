@@ -6,7 +6,7 @@ import uuid
 sys.path.append(str(Path(__file__).parent.parent))
 
 from flask import Flask, render_template, request, redirect, url_for, send_from_directory,jsonify, session
-from modules.image_processing import init_sam_model, process_image
+from modules.image_processing_AMD import init_sam_model, process_image
 
 import numpy as np
 import modules.utils as utils

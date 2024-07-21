@@ -36,7 +36,7 @@ call venv\Scripts\activate.bat
 
 echo Installing requirements
 
-pip install -r requirements.txt
+pip install -r requirements-AMD.txt
 
 echo Installing Node.js dependencies
 npm install -g typescript

@@ -7,7 +7,7 @@ from segment_anything import sam_model_registry, SamAutomaticMaskGenerator, SamP
 from modules.mask_utils import MaskUtils
 
 def init_sam_model():
-    # 初始化模型
+    print("加载模型中...")
     sam_checkpoint = "./models/sam_vit_h_4b8939.pth"
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
     model_type = "default"
@@ -18,6 +18,7 @@ def init_sam_model():
     sam_predictor = SamPredictor(sam)
 
     mask_utils:MaskUtils = MaskUtils(sam_predictor)
+    print("use",device)
     return mask_utils
 
 def process_image(image_path, mask_utils:MaskUtils, input_point, input_label, save_path):

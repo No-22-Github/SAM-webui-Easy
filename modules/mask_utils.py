@@ -8,7 +8,7 @@ import modules.utils as utils
 
 class MaskUtils:
     def __init__(self, predictor):
-        self.sam_predictor:SamPredictor = predictor
+        self.sam_predictor: SamPredictor = predictor
 
     def show_mask(self, mask, ax, random_color=False):
         if random_color:
@@ -20,8 +20,8 @@ class MaskUtils:
         ax.imshow(mask_image)
         
     def show_points(self, coords, labels, ax, marker_size=375):
-        pos_points = coords[labels==1]
-        neg_points = coords[labels==0]
+        pos_points = coords[labels == 1]
+        neg_points = coords[labels == 0]
         ax.scatter(pos_points[:, 0], pos_points[:, 1], color='green', marker='*', s=marker_size, edgecolor='white', linewidth=1.25)
         ax.scatter(neg_points[:, 0], neg_points[:, 1], color='red', marker='*', s=marker_size, edgecolor='white', linewidth=1.25)   
         
@@ -113,8 +113,8 @@ class MaskUtils:
         # Blend the original image with the color mask
         blended_image = cv2.addWeighted(image, 0.7, color_mask, 0.3, 0)
 
-        # Create a black image with the same size as the original image
-        black_image = np.zeros_like(image)
+        # Create a white image with the same size as the original image
+        white_image = np.ones_like(image) * 255
 
         # Convert the mask to the same data type as the original image
         mask_uint8 = masks[0].astype(np.uint8) * 255
@@ -122,9 +122,9 @@ class MaskUtils:
         # Apply the mask to the original image
         masked_image = cv2.bitwise_and(image, image, mask=mask_uint8)
 
-        # Copy the masked image to the black image
+        # Copy the masked image to the white image
         mask_3_channel = np.stack([masks[0]] * 3, axis=-1)
-        np.copyto(black_image, masked_image, where=mask_3_channel)
+        np.copyto(white_image, masked_image, where=mask_3_channel)
 
         # Draw points on the blended image
         for i in range(len(input_point)):
@@ -140,9 +140,10 @@ class MaskUtils:
 
             mask_path = os.path.join(save_path, f"mask.png")
             mask_path = utils.get_new_path_if_exist(mask_path, True)
-            cv2.imwrite(mask_path, cv2.cvtColor(black_image, cv2.COLOR_RGB2BGR))
+            cv2.imwrite(mask_path, cv2.cvtColor(white_image, cv2.COLOR_RGB2BGR))
             return output_path, mask_path
         else:
             cv2.imshow("Blended Image", cv2.cvtColor(blended_image, cv2.COLOR_RGB2BGR))
+            cv2.imshow("Mask Image", cv2.cvtColor(white_image, cv2.COLOR_RGB2BGR))
             cv2.waitKey(0)
             cv2.destroyAllWindows()

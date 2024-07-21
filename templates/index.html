@@ -11,11 +11,11 @@
 </head>
 <body>
     <div class="container mt-4">
-        <h1 class="text-center">Segment Anything</h1>
+        <h1 class="text">Segment Anything 万物分割</h1>
         
         <!-- Add your hint text here -->
-        <p class="text-center text-muted">在左边放入你想要提取的图片，然后点击图片上你想要提取的物品的多个点，点击process points，等待loading，即可分割你想要的图片！
-            Put the picture you want to extract on the left, then click on multiple points on the object you want to extract in the picture, click on 'process points', wait for loading, and you can separate the picture you want!
+        <p class="text-center text-muted">在左边放入你想要提取的图片，然后点击图片上你想要提取的物品的多个点，点击开始计算，稍作等待，即可扣出你要的东西！
+            <br/>Put the picture you want to extract on the left, then click on multiple points on the object you want to extract in the picture, click on 'process points', wait for loading, and you can separate the picture you want!
         </p>
 
         <div class="row mt-4">
@@ -34,7 +34,7 @@
         </div>
         <div class="row mt-4">
             <div class="col-md-12 text-center">
-                <button id="process-points" type="button" class="btn btn-secondary mb-3">Process Points</button>
+                <button id="process-points" type="button" class="btn btn-primary mb-3">Process Points<br/>开始计算</button>
                 <div id="loading" class="text-center" style="display:none;">
                     <div class="spinner-border text-primary" role="status">
                     </div>
@@ -50,17 +50,17 @@
 
         <div class="row mt-4">
             <div class="col-md-4">
-                <button id="clear-points" type="button" class="btn btn-secondary">Clear Points</button>
+                <button id="clear-points" type="button" class="btn btn-primary">Clear Points<br/>清除选点</button>
             </div>
             <div class="col-md-4">
                 <form id="upload-form" action="/upload" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
-                        <input type="file" class="btn btn-secondary mb-3" id="image" name="image" data-text="Choose file" required>
+                        <input type="file" class="btn btn-primary mb-3" id="image" name="image" data-text="Choose file" required>
                     </div>
                 </form>
             </div>
             <div class="col-md-4">
-                <a id="download-mask" class="btn btn-primary" href="#" download="mask.png" style="display: none;">Download Mask</a>
+                <a id="download-mask" type="button" class="btn btn-primary" href="#" download="mask.png" style="display: none;">Download Mask 下载抠图</a>
             </div>
         </div>
     </div>
