@@ -3,22 +3,24 @@
 欢迎来到我为 [segment-anything](https://github.com/facebookresearch/segment-anything) 所做的一个简易可本地搭建的webui demo。
 
 ## 🚀 安装与设置
+**本项目需要Node.JS**点击[此处](https://nodejs.cn/download/)下载
 
 1. **创建本地虚拟环境并安装所需库：**
 
-本项目只支持Windows：
+**本项目只支持Windows：**
 
       - 1.对于N卡用户，请确认CUDA已安装，然后双击setup.bat文件进行安装。
-      - 2.对于A卡用户，请确认直接双击AMD-setup.bat进行安装。
+      - 2.对于A卡用户，请直接双击AMD-setup.bat进行安装。（AMD显卡使用DML来加速运算，可能会有bug）
 
-1. **下载必要的模型文件（至少选择一个）：**
+2. **下载必要的模型文件：**
 
     - [sam_vit_h_4b8939.pth](https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth)
 
 
     下载好模型文件后，将其放入项目的 `models` 目录下。
 
-2. 等待setup.bat或AMD-setup.bat运行完成,双击run.bat或AMD-run.bat即可启动程序。
+3. **启动**
+    等待setup.bat或AMD-setup.bat运行完成,双击run.bat或AMD-run.bat即可启动程序。
 
 ## 🎨 使用方法
 运行程序后，在cmd的输出框里你可以找到一个* Running on http://127.0.0.1:xxxx (xxxx为端口号)*这样的地址，在浏览器打开即可
@@ -48,7 +50,7 @@
 
 ## 📓 TODO
 
-- [ ] 支持AMD
+- [ ] 全面支持AMD
 - [ ] 增加黑白底切换
 - [ ] 添加更多模型
 
